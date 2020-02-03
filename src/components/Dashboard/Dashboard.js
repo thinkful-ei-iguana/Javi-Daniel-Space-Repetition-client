@@ -1,13 +1,12 @@
-import React, { useState, useEffect } from 'react'
-import { useHistory, Link } from 'react-router-dom'
+import React, { useEffect, useContext } from 'react'
+import { Link } from 'react-router-dom'
 import config from '../../config'
 import tokenService from '../../services/token-service'
+import LanguageContext from '../../contexts/LanguageContext';
 import './Dashboard.css'
 
 export default function Dashboard(props) {
-  const [language, setLanguage] = useState({name: ''});
-  const [words, setWords] = useState([]);
-  let history = useHistory();
+  const languageContext = useContext(LanguageContext);
 
   useEffect(() => {
     fetch(`${config.API_ENDPOINT}/language`, {
@@ -18,19 +17,19 @@ export default function Dashboard(props) {
     })
     .then(res => res.json())
     .then(data => {
-      setLanguage(data.language);
-      setWords(data.words);
+      languageContext.setLanguage(data.language);
+      languageContext.setWords(data.words);
     });
   }, [])
 
   return (
     <div className="dashboard-container">
-      <h2>{language.name}</h2>
+      <h2>{languageContext.language.name}</h2>
       <div className="words-to-practice">
         <h3>Words to practice</h3>
         
         <ul className="word-list">
-          {words.map(word => {
+          {languageContext.words.map(word => {
             return (
               <li className="words-row" key={word.id}>
                 <h4 className="word-span">{word.original}</h4>
@@ -45,7 +44,7 @@ export default function Dashboard(props) {
           })}
         </ul>
         <div className="total-answers">
-          {`Total correct answers: ${language.total_score}`}
+          {`Total correct answers: ${languageContext.language.total_score}`}
         </div>
         <Link to='/learn' className="learn-btn">Start practicing</Link>
       </div>
