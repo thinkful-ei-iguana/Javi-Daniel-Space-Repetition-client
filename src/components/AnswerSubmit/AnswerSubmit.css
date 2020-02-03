@@ -1,0 +1,68 @@
+.answer-submit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: rgba(255, 255, 255, 0.8)
+}
+
+.answer-submit-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.answer-submit-header h2 {
+  font-size: 1.2rem;
+  margin-bottom: 0;
+  margin-top: 2rem;
+}
+
+.word-to-translate {
+  font-size: 3rem;
+  color: #F26419;
+}
+
+.learn-guess-form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.learn-guess-label {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+#learn-guess-input {
+  padding: 0.5rem 2rem 0.5rem 2rem;
+  font-size: 1.5rem;
+  border-radius: 1rem;
+  border: 2px solid #F26419;  
+  margin-bottom: 2rem;
+  color: #2F4858;
+  max-width: calc(100vw - 1rem);
+  align-self: center;
+}
+
+.learn-guess-submit {
+  padding: 0.5rem;
+  align-self: center;
+  background-color: #55DDE0;
+  border: 2px solid rgba(255, 255, 255, 0.8);;
+  border-radius: 0.5rem;
+  color: #2F4858;
+  font-size: 1.2rem;
+}
+
+.learn-guess-submit:hover {
+  background-color: #F26419;
+  color: rgba(255, 255, 255, 0.8);
+  transition-property: color background-color border;
+  transition-duration: 0.25s;
+  transition-timing-function: ease-in-out;
+  -webkit-transition-property: color background-color border;
+  -webkit-transition-duration: 0.25s;
+  -webkit-transition-timing-function: ease-in-out;
+}
