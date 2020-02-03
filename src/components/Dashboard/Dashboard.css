@@ -1,0 +1,81 @@
+.dashboard-container {
+  color: rgba(255, 255, 255, 0.8);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.words-to-practice {
+  background-color: #F6AE2D;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  border-radius: 1rem;
+  width: 75vw;
+  max-width: 40rem;
+  min-width: 18rem;
+  align-items: center;
+}
+
+.learn-btn {
+  text-decoration: none;
+  font-size: 1.2rem;
+  align-self: center;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  background-color: #33658A;
+  border-radius: 0.5rem;
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  color: rgba(255, 255, 255, 1);
+}
+
+.learn-btn:hover {
+  border: 2px solid #F26419;
+  color: #F26419;
+  background-color: #33658A;
+  transition-property: color background-color border;
+  transition-duration: 0.25s;
+  transition-timing-function: ease-in-out;
+  -webkit-transition-property: color background-color border;
+  -webkit-transition-duration: 0.25s;
+  -webkit-transition-timing-function: ease-in-out;
+}
+
+.word-list {
+  padding-left: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.word-span {
+  margin: 0;
+  color: #F26419;
+  border-bottom: 2px solid #F26419;
+  margin-bottom: 0.25rem;
+  width: 100%;
+}
+
+.answer-count {
+  padding-left: 2rem;
+}
+
+.answer-row {
+  display: flex;
+  flex-direction: row;
+
+}
+
+.words-row {
+  padding-bottom: 0.5rem;
+  width: 100%;
+}
+
+.total-answers {
+  color: #F26419;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
