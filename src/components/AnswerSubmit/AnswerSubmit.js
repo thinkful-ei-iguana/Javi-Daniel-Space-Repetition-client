@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './AnswerSubmit.css';
 
 export default function AnswerSubmit(props) {
+  let currentWord = props.currentWord.nextWord;
+  if (typeof currentWord === 'object') currentWord = '';
 
-  const {
-    nextWord, 
+  const { 
     totalScore, 
     wordCorrectCount,
     wordIncorrectCount,
@@ -25,7 +26,7 @@ export default function AnswerSubmit(props) {
         <h2 className="current-word">
           Translate the word:{''}
         </h2>
-        <span className="word-to-translate">{nextWord}</span>
+        <span className="word-to-translate">{currentWord}</span>
       </div>
       <p>{`Your total score is: ${totalScore}`}</p>
       <form 

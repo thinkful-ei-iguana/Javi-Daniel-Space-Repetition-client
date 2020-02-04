@@ -28,6 +28,14 @@ export default function Learn(props) {
     }) 
   }
 
+  const advance = () => {
+    setAnswer('');
+    setCurrentWord({nextWord});
+    // setNextWord({nextWord: ''});
+    // setIsCorrect(null);
+    // setGuess('');
+  }
+
   const submitGuess = (guess) => {
     fetch(`${config.API_ENDPOINT}/language/guess`, {
       method: 'POST',
@@ -64,7 +72,7 @@ export default function Learn(props) {
   }
 
   useEffect(() => { // sets language context if it hasn't been already
-    if (!language.name) {
+    if (!language || !language.name) {
       fetch(`${config.API_ENDPOINT}/language`, {
         method: 'GET',
         headers: {
@@ -77,10 +85,10 @@ export default function Learn(props) {
         setWords(data.words);
       });
     }
-  }, [])
+  }, [language])
 
   useEffect(() => { // gets next word on mount
-    getNextWord();
+      getNextWord();
   }, [])
   
   return (
@@ -93,6 +101,7 @@ export default function Learn(props) {
             answer={answer}
             guess={guess}
             nextWord={nextWord}
+            advance={advance}
           />
           :
           <AnswerSubmit 

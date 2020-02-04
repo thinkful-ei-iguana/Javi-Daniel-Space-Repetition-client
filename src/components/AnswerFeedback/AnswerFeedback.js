@@ -25,15 +25,13 @@ export default function AnswerFeedback(props) {
       </div>
       <div className="DisplayFeedback">
         <p className="feedback-p">
-          The correct translation for {' '}
-          <span className="green">{props.currentWord.nextWord}</span>
-          {' '} was {' '}
-          <span className="green">{props.answer}</span>
-          {' '} and you chose {' '}
-          <span className={guessColor}>{props.guess}</span>{'!'}
+          {`The correct translation for ${props.currentWord.nextWord} was ${props.answer} and you chose ${props.guess}!`}
         </p>
       </div>
-      <button className="learn-guess-submit">
+      <button 
+        className="learn-guess-submit"
+        onClick={props.advance}
+      >
         Try another word!
       </button>
     </div>
