@@ -7,7 +7,7 @@ import config from '../../config'
 
 export default function Learn(props) {
   const languageContext = useContext(LanguageContext);
-  const { language, words, setLanguage, setWords } = languageContext;
+  const { language, setLanguage, setWords } = languageContext;
   
   const [currentWord, setCurrentWord] = useState({});
   const [nextWord, setNextWord] = useState({});
@@ -30,10 +30,10 @@ export default function Learn(props) {
 
   const advance = () => {
     setAnswer('');
-    setCurrentWord({nextWord});
-    // setNextWord({nextWord: ''});
-    // setIsCorrect(null);
-    // setGuess('');
+    setCurrentWord(nextWord);
+    setNextWord({nextWord: ''});
+    setIsCorrect(null);
+    setGuess('');
   }
 
   const submitGuess = (guess) => {
@@ -49,12 +49,11 @@ export default function Learn(props) {
     })
     .then(res => res.json())
     .then(json => {
-      console.log(json);
       const {
         nextWord,
         totalScore,
         wordCorrectCount,
-        incorrectWordCount,
+        wordIncorrectCount,
         answer,
         isCorrect
       } = json;
@@ -62,7 +61,7 @@ export default function Learn(props) {
         nextWord,
         totalScore,
         wordCorrectCount,
-        incorrectWordCount,
+        wordIncorrectCount,
       };
       
       setIsCorrect(isCorrect);
