@@ -32,13 +32,14 @@
   border-radius: 0.5rem;
   border: 2px solid #2F4858;
   background-color: #55DDE0;
-  color: rgba(255, 255, 255, 0.8);
+  color: #2F4858;
   font-size: 1.2rem;
 }
 
 .submit-btn:hover {
   border: 2px solid #55DDE0;
   background-color: #2F4858;
+  color: #55DDE0;
   transition-property: color background-color border;
   transition-duration: 0.25s;
   transition-timing-function: ease-in-out;
