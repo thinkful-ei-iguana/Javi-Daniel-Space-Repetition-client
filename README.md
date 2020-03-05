@@ -1,5 +1,12 @@
 # Spaced Repetition Capstone
 
+## Link to live version: <link here>
+ 
+## Project collaborators:
+    Daniel Kent & Javier Zapien
+## API link:
+    https://github.com/thinkful-ei-iguana/Javi-Daniel-Space-Repetition-Server
+
 ## Setup
 
 To setup the application
