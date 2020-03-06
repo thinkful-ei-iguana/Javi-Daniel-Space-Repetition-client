@@ -5,7 +5,7 @@ https://language-rep.now.sh/register
 ## Project collaborators:
     Daniel Kent & Javier Zapien
 ## API link:
-    https://github.com/thinkful-ei-iguana/Javi-Daniel-Space-Repetition-Server
+https://github.com/thinkful-ei-iguana/Javi-Daniel-Space-Repetition-Server
 
 ## Setup
 
